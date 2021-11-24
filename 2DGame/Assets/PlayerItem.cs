@@ -25,6 +25,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     {
         playerName.text = _player.NickName;
         player = _player;
+        UpdatePlayerItem(player);
     }
 
     public void ApplyLocalChanges()
@@ -45,6 +46,7 @@ public class PlayerItem : MonoBehaviourPunCallbacks
             playerProperties["playerClass"] = (int)playerProperties["playerClass"] - 1;
         }
         */
+        playerProperties["playerClassText"] = "left";
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
 
@@ -60,13 +62,30 @@ public class PlayerItem : MonoBehaviourPunCallbacks
             playerProperties["playerClass"] = (int)playerProperties["playerClass"] + 1;
         }
         */
+        playerProperties["playerClassText.text"] = "RIGHT";
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
 
-    /*
-    public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable)
+    
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable playerProperties)
     {
-
+        if (player == targetPlayer)
+        {
+            UpdatePlayerItem(targetPlayer);
+        }
     }
-    */
+
+    void UpdatePlayerItem(Player player)
+    {
+        if (player.CustomProperties.ContainsKey("playerClass"))
+        {
+            // playerAvatar = avatars[(int)player.CustomProperties["playerClass"]];
+            playerProperties["playerClass"] = (int)player.CustomProperties["playerClass"];
+        }
+        else
+        {
+            playerProperties["playerClass"] = 0;
+        }
+    }
+    
 }

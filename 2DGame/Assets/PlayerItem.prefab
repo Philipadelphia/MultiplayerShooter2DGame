@@ -387,7 +387,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5492871015074270655}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6090403354155212496}
+        m_TargetAssemblyTypeName: PlayerItem, Assembly-CSharp
+        m_MethodName: OnClickRightArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2579844211014777074
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +710,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4950002874285923936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6090403354155212496}
+        m_TargetAssemblyTypeName: PlayerItem, Assembly-CSharp
+        m_MethodName: OnClickLeftArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4925221591107831511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1045,7 @@ MonoBehaviour:
   playerName: {fileID: 5621247314308283768}
   leftArrowButton: {fileID: 4746474981404375401}
   rightArrowButton: {fileID: 1527491519888199388}
+  playerClassText: {fileID: 7514714851169409908}
 --- !u!1 &7010684924983731100
 GameObject:
   m_ObjectHideFlags: 0
