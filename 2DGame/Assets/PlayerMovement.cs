@@ -32,11 +32,9 @@ public class PlayerMovement : MonoBehaviour
         // Moves the rigid body on the character using inbuilt unity functions
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        // Makes the player look at the camera (roughly)
-
+        // Makes the player look at the camera 
         Vector2 lookDir = mousePos - rb.position;
-
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //+ 13.5f;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //+ 13.5f; // Test to see whether changing the rotation to match gun tip looked better or not (Decided Against)
         rb.rotation = angle;
 
         // Moves the camera to wherever the player is
