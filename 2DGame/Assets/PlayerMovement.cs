@@ -33,9 +33,11 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         // Makes the player look at the camera (roughly)
+
         Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 13.5f;
-        //rb.rotation = angle;
+
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg; //+ 13.5f;
+        rb.rotation = angle;
 
         // Moves the camera to wherever the player is
         camrb.MovePosition(rb.position);
