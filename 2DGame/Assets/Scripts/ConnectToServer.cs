@@ -25,7 +25,10 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        SceneManager.LoadScene("Lobby");
+        // This was for multiplayer but that didnt work so it is now commented out
+        //SceneManager.LoadScene("Lobby");
+
+        SceneManager.LoadScene("Game");
     }
 
 }

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,13 +14,16 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
 
     Vector2 movement;
-
-
     Vector2 mousePos;
+
+    Player player;
+    public Text playerName;
 
     // Update is called once per frame
     void Update()
     {
+        playerName.text = PhotonNetwork.NickName;
+
         // Get methods for coordinates
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
