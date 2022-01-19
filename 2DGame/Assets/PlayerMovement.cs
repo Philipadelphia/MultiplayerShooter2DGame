@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         playerName.text = PhotonNetwork.NickName;
+        if (playerName.text.Length > 9)
+        {
+            string sub = playerName.text.Substring(0, 6);
+            playerName.text = sub + "...";
+        }
 
         // Get methods for coordinates
         movement.x = Input.GetAxisRaw("Horizontal");

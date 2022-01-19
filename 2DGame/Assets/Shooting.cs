@@ -11,15 +11,28 @@ public class Shooting : MonoBehaviour
 
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public int ammo = 10;
+
+    public int clipSize;
+    private int ammo;
     public int reloadTimeSecs = 2;
+
+
     public float bulletForce = 20f;
     public Text AmmoAmount;
     public Text AmmoAmount2;
+    private Boolean started = false;
+
+    public bool Started { get => started; set => started = value; }
 
     // Update is called once per frame
     void Update()
     {
+        if (!started)
+        {
+            ammo = clipSize;
+            ChangeAmmoText(ammo.ToString());
+            started = true;
+        }
         // Waits for key presses
         if (Input.GetButtonDown("Fire1"))
         {
@@ -49,7 +62,7 @@ public class Shooting : MonoBehaviour
         ammo = 0;
         ChangeAmmoText("...");
         await Task.Delay(reloadTimeSecs*1000);
-        ammo = 10;
+        ammo = clipSize;
         ChangeAmmoText(ammo.ToString());
     }
 
