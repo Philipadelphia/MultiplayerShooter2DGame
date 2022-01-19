@@ -33,14 +33,18 @@ public class Shooting : MonoBehaviour
             ChangeAmmoText(ammo.ToString());
             started = true;
         }
-        // Waits for key presses
-        if (Input.GetButtonDown("Fire1"))
+
+        if (!PauseMenu.GamePaused)
         {
-            Shoot();
-        }
-        if (Input.GetButtonDown("Reload"))
-        {
-            Reload();
+            // Waits for key presses
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+            if (Input.GetButtonDown("Reload"))
+            {
+                Reload();
+            }
         }
     }
 
