@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     public int playerHealth;
 
     public HealthBar healthbar;
+    public GameObject ExitPanelUI;
+    private bool touchingExit;
+
+    public Scoreboard WinCheck;
 
     void Start()
     {
@@ -53,6 +58,13 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerTakeDamage(25);
         }
+
+        if (touchingExit && Input.GetKeyDown(KeyCode.Space) && WinCheck.isGameWon())
+        {
+            PhotonNetwork.Disconnect();
+            SceneManager.LoadScene("Menu");
+        }
+
     }
 
     void FixedUpdate()
@@ -90,5 +102,30 @@ public class PlayerMovement : MonoBehaviour
     void EndGame()
     {
         Debug.Log("Game should end");
+    }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        /* Debugging code to make sure the bullets actually collide with the enemy.
+        Debug.Log(hitInfo.name);*/
+
+        Door door = hitInfo.GetComponent<Door>();
+        if (door != null)
+        {
+            touchingExit = true;
+            ExitPanelUI.SetActive(true);
+        }
+    }
+    void OnTriggerExit2D(Collider2D hitInfo)
+    {
+        /* Debugging code to make sure the bullets actually collide with the enemy.
+        Debug.Log(hitInfo.name);*/
+
+        Door door = hitInfo.GetComponent<Door>();
+        if (door != null)
+        {
+            touchingExit = false;
+            ExitPanelUI.SetActive(false);
+        }
     }
 }

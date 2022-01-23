@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 149040870720368590}
   m_Layer: 0
   m_Name: PinkEnemy
-  m_TagString: Untagged
+  m_TagString: Pink Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
-  enemyMaxHealth: 100
+  enemyMaxHealth: 80
   healthbar: {fileID: 6769815633418250035}
 --- !u!1 &9021561416170371656
 GameObject:

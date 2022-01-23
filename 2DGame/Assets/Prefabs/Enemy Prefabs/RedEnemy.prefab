@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 7788897184319220373}
   m_Layer: 0
   m_Name: RedEnemy
-  m_TagString: Untagged
+  m_TagString: Red Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
-  enemyMaxHealth: 100
+  enemyMaxHealth: 160
   healthbar: {fileID: 6424200556909621610}
 --- !u!1 &4707015510169370547
 GameObject:
