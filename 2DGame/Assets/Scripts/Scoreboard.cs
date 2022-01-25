@@ -52,11 +52,11 @@ public class Scoreboard : MonoBehaviour
             CompletedText.text = "NOT COMPLETED";
         }
 
-        /* // Code to test if text changing works
+         // Code to test if text changing works
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gameWon = true;
-        }*/
+        }
     }
 
     void Show()

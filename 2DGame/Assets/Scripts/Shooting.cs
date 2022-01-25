@@ -18,10 +18,12 @@ public class Shooting : MonoBehaviour
 
 
     public float bulletForce = 20f;
+
+
     public Text AmmoAmount;
     public Text AmmoAmount2;
-    private Boolean started = false;
 
+    private Boolean started = false;
     public bool Started { get => started; set => started = value; }
 
     // Update is called once per frame
